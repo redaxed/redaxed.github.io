@@ -1,0 +1,74 @@
+<head>
+<title>premalone</title>
+<script src="mouseeffecct.js"></script> 
+<script type="text/javascript">
+const positions = ['topLeft', 'topRight', 'bottomLeft', 'bottomRight']
+function changeCorner(video) {
+    const currentName = video.className;
+    video.className = positions[Math.floor(Math.random()*positions.length)];
+}
+setInterval(() => {
+  changeCorner(document.getElementById("video"))
+  changeCorner(document.getElementById("video2"))
+}, 2000);
+
+</script>
+<style>
+.center {
+  display: block;
+}
+body {
+  background-color: #ff71ce;
+}
+.wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container{
+  position: fixed;
+  height: 100%;
+  width:100%;
+}
+#video {
+    position: fixed;
+}
+#video2 {
+    position: fixed;
+}
+.topLeft{
+    top: 0;
+    left: 0;
+}
+.topRight{
+    top: 0;
+    right: 0;
+}
+.bottomLeft{
+    bottom: 0;
+    left: 0;
+}
+.bottomRight{
+    bottom: 0;
+    right: 0;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+</div>
+<div class='wrapper'>
+<img class="center" src="malonepic.png"/>
+<iframe style="display:none" id="stream" src="malone.mp3" frameborder="0"></iframe>
+    <div id="video" class="topLeft">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/XWr2VZiov_A?rel=0&autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+    </div>
+    <div id="video2" class="bottomRight">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/XWr2VZiov_A?rel=0&autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+    </div>
+    </div>
+</body>
