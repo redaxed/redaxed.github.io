@@ -2,15 +2,19 @@
 <title>premalone</title>
 <script src="mouseeffecct.js"></script> 
 <script type="text/javascript">
+const backgroundColors = ["#FF6AD5", "#C774E8", "#AD8CFF", "#8795E8", "#94D0FF"]
 const positions = ['topLeft', 'topRight', 'bottomLeft', 'bottomRight']
 function changeCorner(video) {
     const currentName = video.className;
+
     video.className = positions[Math.floor(Math.random()*positions.length)];
 }
 setInterval(() => {
   changeCorner(document.getElementById("video"))
   changeCorner(document.getElementById("video2"))
-}, 2000);
+  changeCorner(document.getElementById("video3"))
+  document.body.style.backgroundColor = backgroundColors[Math.floor(Math.random()*backgroundColors.length)]
+}, 1000);
 
 </script>
 <style>
@@ -36,6 +40,9 @@ body {
     position: fixed;
 }
 #video2 {
+    position: fixed;
+}
+#video3 {
     position: fixed;
 }
 .topLeft{
@@ -77,6 +84,10 @@ body {
     </iframe>
     </div>
     <div id="video2" class="bottomRight">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/XWr2VZiov_A?rel=0&autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+    </div>
+    <div id="video3" class="bottomRight">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/XWr2VZiov_A?rel=0&autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
     </iframe>
     </div>
